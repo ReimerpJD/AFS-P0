@@ -9,7 +9,7 @@ function Prompt(Message){
 }
 function LaunchServer(){
 	this.App=require(path.join(__dirname,'Server'));
-	this.SSH=require(path.join(__dirname,'SSH'));
+	this.SSH=require(path.join(__dirname,'SSL'));
 	this.Server=https.createServer(this.App,this.SSH);
 	this.Server.listen(8443);
 }
