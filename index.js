@@ -15,11 +15,12 @@ function LaunchServer(){
 }
 function LaunchClient(){
 	this.GetServerIP=async function(){
-		this.Server=await Prompt("What is the Server's IP Address?\n").replace('\\','');
+		this.Server=await Prompt("What is the Server's IP Address?\n");
+		this.Server.replace('\\','');
 		this.Listen();
 	}
 	this.Listen=async function(){
-		https.request({host:this.Server,path:'/Terminal/0'},R=>{console.log(R)});
+		https.request({host:this.Server,path:'/Terminal/0',port:8},R=>{console.log('res:',R)});
 		// wait for loopback
 		// once present, complete handshake
 		// once present, listen for loopback break

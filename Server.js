@@ -18,5 +18,9 @@ Router.post('/Fixture/:ID',(Request,Response)=>{
 	console.log('Fixture Challenge Response');
 	Response.send(true);
 });//check challenge
+Router.all('/*',(Request,Response)=>{
+	console.log('caught\'ya!');
+	Response.send(false);
+});
 Router.post('/Data');//log data under session's fixture, terminal, and user
 module.exports=Router;
