@@ -15,7 +15,7 @@ function LaunchServer(){
 }
 function LaunchClient(){
 	this.GetServerIP=async function(){
-		this.Server=await Prompt("What is the Server's IP Address?\n").replace('\','');
+		this.Server=await Prompt("What is the Server's IP Address?\n").replace('\\','');
 		this.Listen();
 	}
 	this.Listen=async function(){
